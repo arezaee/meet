@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Normal';
+    src: url('../fonts/mine/DroidNaskh.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Titr';
+    src: url('../fonts/mine/Khandevane.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Title';
+    src: url('../fonts/mine/DimaNaskh.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@media print{
+    @page {
+        size: A4 landscape;
+        size: 287mm 210mm;
+    }
+    body{line-height:1 !important; font-size:0.8em;}
+    .row-month{max-height:16mm !important}
+    .row-year-title{max-height:5mm !important}
+    .year-title {padding-top:0 !important}
+    .month-title{padding:4mm 0 !important;height:16mm}
+    .month-title .card-title{margin-bottom:4mm !important; }
+    .year-title .card-title{margin-bottom:0mm !important; padding-top:0mm; line-height:1}
+    .day{min-height:0 !important}
+    .day .card-title{padding-top:0 !important; }
+    .schedule {min-height:6mm !important}
+}
+
+
+body
+{
+    font-family:Normal !important;
+    direction:rtl !important;
+    text-align:right !important;
+}
+
+.row-striped{
+  padding:0.5em 0;
+  border-top: 1px solid rgb(222, 226, 230);
+}
+.row-striped:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.row-month:nth-child(even){
+  background-color: rgba(0, 0, 0, 0.05) !important
+}
+
+.row-month *{
+  background-color: rgba(0, 0, 0, 0) !important
+}
+
+.cal .row {margin:0}
+.cal .col {padding:0}
+
+.col-w{max-width:19% !important}
+.col-w.tail{max-width:6% !important}
+.col-mt{width:10%}
+.col-d{width:14%; margin:0 0.4%}
+
+.col-w, .col-mt, .col-d {
+	position: relative;
+	min-height: 1px;
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+
+.day-of-week {
+    position: absolute;
+    transform: rotate(90deg) translate(15%,-50%);
+	width: 5em;
+	transform-origin: bottom;
+	padding:0 0.5em;
+}
+.year-title {
+    font-family:Titr;
+    text-align:center;
+    margin-left:0.2em;
+    padding:0.2em 0 0 0 ;
+}
+
+.month-title{
+    font-family:Titr;
+    text-align:center;
+    margin-left:0.2em;
+    padding:1.2em 0;
+}
+.month-title .card-title{line-height:0.3em; margin-bottom:0.5em;}
+.month-title .card-text{font-size:0.7em}
+
+.day{text-align:center;min-height:2.45em}
+.day .card-title{line-height:1em; padding-top:0.4em; margin-bottom:0.1em}
+.day .card-text{font-size:0.55em; }
+.day-title .card-title{font-family:Titr;}
+
+
+.occasion {font-size:0.5em}
+.occasion span{padding:0 0.2em}
+
+.schedule {padding:0.1em; min-height:2em}
+.schedule .name{font-family:Title;text-align:left;font-size:0.8em;line-height:1.2em; padding:0}
+.schedule .phone{font-size:0.55em; padding:0 0.1em}
+.schedule .address{font-size:0.55em}
+.schedule .comment{font-family:Title;text-align:left; line-height:1.8em; font-size:0.95em;}
+
+.alert{position:fixed}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
