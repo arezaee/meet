@@ -1,5 +1,7 @@
 @php($dn=7)
-<div class="col-w @if($week==5) tail @php($dn=2) @endif">
+<div class="col-w @if($week==5) tail @php($dn=2) @endif
+@if($week>0) d-none d-lg-block @endif
+">
     <div class="row">
     @for($no=1; $no<=$dn; $no++  )
         @include('showCal.day_of_week', array(

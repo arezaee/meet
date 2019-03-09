@@ -1,8 +1,8 @@
 <div class="row no-gutter row-month">
-    <div class="col-1 ">
+    <div class="col-lg-1">
         @include("showCal.month_title")
     </div>
-    <div class="col-11">
+    <div class="col-lg-11">
         <div class="card-group">
             @for($week=0;$week<6;$week++)
                 @include("showCal.month_week",

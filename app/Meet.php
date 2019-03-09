@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Meet extends Model
 {
-    protected $fillable = ['show_name','id_name','password','start_at'];
+    protected $fillable = ['show_name','id_name','password','start_at','pic'];
 
     public function users()
     {

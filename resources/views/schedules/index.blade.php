@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="hero-wrap hero-wrap-3 pt-5" style="background-image: url('/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-3 pt-5" style="background-image: url('/images/{{$meet->pic}}.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container pt-5">
         <div class="row no-gutters slider-text align-items-end justify-content-center">

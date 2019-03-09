@@ -10,11 +10,6 @@
     <title>{{ config('app.name', '') }}</title>
 
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i" rel="stylesheet">
-
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('css/my.css') }}" rel="stylesheet">
@@ -25,41 +20,34 @@
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+
 
     <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
-
-
-    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/persianDatepicker-default.css') }}">
 </head>
 <body>
 
+<a name="top"></a>
 <nav class="navbar navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container d-flex align-items-stretch">
         <div class="col-3 d-flex align-items-center">
-            <a class="navbar-brand" href="{{ url('/') }}">تقویم<span>جلسه مذهبی</span></a>
+            <a class="navbar-brand" href="{{ route('index').'#top' }}">تقویم<span>جلسه مذهبی</span></a>
         </div>
-        <div class="col-9 d-flex align-items-center text-left">
+        <div class="col-9 d-flex">
             <ul class="ftco-social mt-2 mr-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-linkedin"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-github"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-cloud"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.linkedin.com/in/a-rezaee/"><span class="icon-linkedin"></span></a></li>
+                <li class="ftco-animate"><a href="https://github.com/arezaee/meet"><span class="icon-github"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-payment"></span></a></li>
 
-            @if (Route::has('login'))
                 @auth
-                <li class="ftco-animate"><a href="{{ url('/home') }}"><span class="icon-home"></span></a></li>
                 <li class="ftco-animate"><a href="{{ route('logout') }}"><span class="icon-sign-out"></span></a></li>
                 @else
                 <li class="ftco-animate"><a href="{{ route('login') }}"><span class="icon-sign-in"></span></a></li>
                 @endauth
-            @endif
 
             </ul>
 
@@ -70,15 +58,17 @@
 
 
 
-        <div class="collapse navbar-collapse" id="ftco-nav">
+        <div class="collapse navbar-collapse text-left" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="ministry.html" class="nav-link">Ministries</a></li>
-                <li class="nav-item"><a href="sermons.html" class="nav-link">Sermons</a></li>
-                <li class="nav-item"><a href="events.html" class="nav-link">Upcoming Events</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                @auth
+                <li class="nav-item"><a href="{{ route('home') }}" class="nav-link pt-0">صفحه شخصی</a></li>
+                @endauth
+                <li class="nav-item"><a href="{{ route('index') }}#top" class="nav-link pt-0">صفحه اصلی</a></li>
+                <li class="nav-item"><a href="{{ route('index') }}#verse" class="nav-link pt-0">کلام نورانی</a></li>
+                <li class="nav-item"><a href="{{ route('index') }}#meets" class="nav-link pt-0">جلسه ها</a></li>
+                <li class="nav-item"><a href="{{ route('index') }}#help" class="nav-link pt-0">راهنما</a></li>
+                <li class="nav-item"><a href="{{ route('index') }}#about" class="nav-link pt-0">درباره</a></li>
+                <li class="nav-item"><a href="{{ route('index') }}#contact" class="nav-link pt-0">تماس</a></li>
             </ul>
         </div>
     </div>
@@ -92,63 +82,39 @@
         <div class="row mb-5">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Spring Church</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                        <li class="ftco-animate"><a href="#"><span class="icon-linkedin"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-github"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-cloud"></span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4 ml-md-5">
-                    <h2 class="ftco-heading-2">About</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Staff</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Beliefs</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>History</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Mission</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Wedding &amp; Funerals</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Jobs &amp; Internship</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Fellowships</a></li>
+                    <h2 class="ftco-heading-2">تقویم جلسه مذهبی</h2>
+                    <p>هزینه این تقویم یک صلوات با نیت سلامتی و تعجیل در امر فرج مولایمان حضرت صاحب الزمان است. </p>
 
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                        <li class="ftco-animate"><a href="https://www.linkedin.com/in/a-rezaee/"><span class="icon-linkedin"></span></a></li>
+                        <li class="ftco-animate"><a href="https://github.com/arezaee/meet"><span class="icon-github"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-payment"></span></a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4 ml-md-5">
-                    <h2 class="ftco-heading-2">Connect</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Home Groups</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Recovery Groups</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Memberships</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Children &amp; Students</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Volunteer</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Counseling</a></li>
-                        <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Assistance</a></li>
-                    </ul>
                 </div>
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Service Hours</h2>
-                    <div class="opening-hours">
-                        <h4>Services Hours</h4>
-                        <p class="pl-3">
-                            <span class="mb-3">Saturday Prayer Meeting &mdash; 10:00 am to 11:30 am</span>
-                            <span>Sunday Service &mdash; 8:30 am to 11:30 am</span>
-                        </p>
-                    </div>
+                    <h2 class="ftco-heading-2">لینک های مفید</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="https://cafebazaar.ir/app/god.to.bethink.bethinktopray/" class="py-1 d-block"><span class="ion-ios-arrow-back ml-3"></span>یاد نماز</a></li>
+                        <li><a href="https://cafebazaar.ir/app/god.to.bethink.hopelight/" class="py-1 d-block"><span class="ion-ios-arrow-back ml-3"></span>نور امید</a></li>
+                        <li><a href="https://hadisgraph.com/" class="py-1 d-block"><span class="ion-ios-arrow-back ml-3"></span>حدیث گراف</a></li>
+                        <li><a href="https://alkafeel.net/?lang=pr" class="py-1 d-block"><span class="ion-ios-arrow-back ml-3"></span>شبکه جهانی الکفیل</a></li>
+                    </ul>
+
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-
-                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                <p>
+                    &copy;{{ Zaman::gToj('now','YYYY') }} این نرم افزار بصورت متن باز و رایگان می باشد و کلیه حقوق آن محفوظ است.
+                </p>
+                <i style="font-size:0.6em">قالب سایت با تغییرات برگرفته شده از <a href="https://colorlib.com" target="_blank">ColorLib</a></i>
             </div>
         </div>
     </div>
@@ -157,27 +123,26 @@
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
 <!-- Scripts -->
 <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
 
 <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
-<script src="{{ asset('js/popper.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
 <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
 <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('js/aos.js') }}"></script>
 <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
-<script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
+
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/aos.js') }}"></script>
 <script src="{{ asset('js/scrollax.min.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="{{ asset('js/google-map.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 <script src="{{ asset('js/persianDatepicker.min.js') }}"></script>
+
+
+<script src="{{ asset('js/popper.min.js') }}"></script>
+<script src="{{ asset('js/my.js') }}"></script>
 
 <script>
     @yield('script')

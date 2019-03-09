@@ -19,6 +19,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/mine/DimaNaskh.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
 @media print{
     @page {
         size: A4 landscape;
@@ -63,19 +70,23 @@ body
 .cal .row {margin:0}
 .cal .col {padding:0}
 
-.col-w{max-width:19% !important}
-.col-w.tail{max-width:6% !important}
-.col-mt{width:10%}
-.col-d{width:14%; margin:0 0.4%}
 
-.col-w, .col-mt, .col-d {
-	position: relative;
-	min-height: 1px;
-	flex-basis: 0;
-	flex-grow: 1;
-	max-width: 100%;
+@media screen and (min-width: 1025px)
+{
+    .col-w{max-width:19% !important}
+    .col-w.tail{max-width:6% !important}
+
+    .col-mt{width:10%}
+    .col-d{width:14%; margin:0 0.4%}
+
+    .col-w, .col-mt, .col-d {
+        position: relative;
+        min-height: 1px;
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
 }
-
 
 .day-of-week {
     position: absolute;
@@ -121,3 +132,6 @@ body
     padding-right:0;
     padding-left:0;
 }
+
+#ftco-navbar:not(.scrolled) {background-color: rgba(45, 45, 45, 0.6) !important;}
+

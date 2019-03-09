@@ -34,4 +34,6 @@ return [
     'Register'  =>  'عضویت',
     'Registered Now'  =>  'عضو هستم',
     'Name'  =>  'نام',
+    'Phone Number' => 'تلفن',
+    'Mobile Number' => 'تلفن همراه',
 ];

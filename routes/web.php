@@ -19,8 +19,9 @@ Auth::routes();
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('index');
+Route::get('/home', 'HomeController@home')->name('home');
+Route::post('/', 'HomeController@contact')->name('contact');
 
 Route::get('/show/{id}/{year}/show', 'HomeController@showCal')->name('meets.calendar');
 Route::patch('/show/{id}/password', 'HomeController@meetPassword')->name('meets.password');;

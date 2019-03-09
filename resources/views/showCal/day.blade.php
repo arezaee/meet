@@ -1,5 +1,5 @@
 @if($day>0 && $day<=$month->month_day)
-<div class="col-d">
+<div class="col">
     <div class="card day @if($dw==7 || $days[$day]->holiday) text-danger @endif ">
         <h6 class="row card-title">
             <div class="col">
@@ -17,7 +17,7 @@
     </div>
 </div>
 @else
-<div class="col-d day">
+<div class="col day">
 
 </div>
 @php($valid_week=false)

@@ -7,8 +7,10 @@ use App\Month;
 use App\Person;
 use App\Schedule;
 use App\Meet;
+use App\Contact;
 use App\Http\Controllers\Days\Day;
 use App\Http\Controllers\Days\MonthWithDay;
+use Spatie\Browsershot\Browsershot;
 
 class HomeController extends Controller
 {
@@ -29,7 +31,36 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $this_year = 1398;
+        $meets = Meet::orderBy('id','desc')->take(3)->get();
+        return view('home',compact('meets','this_year'));
+    }
+
+    public function home()
+    {
+        return redirect(route('meets.index'));
+    }
+
+    public function contact(Request $request)
+    {
+      $request->validate([
+        'name'=>'required',
+        'email'=> 'required|email',
+        'subject'=> 'required',
+        'message' => 'required'
+      ]);
+
+      $contact = new Contact([
+        'name' => $request->post('name'),
+        'email' => $request->post('email'),
+        'subject'=> $request->post('subject'),
+        'message'=> $request->post('message')
+      ]);
+
+      $contact->save();
+
+      return redirect(route('index').'#contact')->with('success', 'افزوده شد');
+
     }
 
     public function showCal($id,$year)
@@ -51,7 +82,7 @@ class HomeController extends Controller
             return view('showCal.index',compact('year','months_days','people','schedules','meet'));
         }
         else
-            return redirect("/meets/{$meet->id_name}");
+            return redirect(route("meets.show",[$meet->id_name]));
     }
 
     /**

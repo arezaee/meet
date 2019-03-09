@@ -65,6 +65,7 @@ class MeetController extends Controller
         'id_name' => $request->post('id_name'),
         'password'=> $password,
         'start_at'=> Zaman::jTog($request->post('start_at')),
+        'pic' => rand(0,9)
       ]);
 
       $meet->save();
@@ -123,9 +124,7 @@ class MeetController extends Controller
      */
     public function destroy($id)
     {
-        $meet = Meet::whereId($id)->first();
-        if(!$meet)
-            $meet = Meet::whereIdName($id)->first();
+        $meet = Meet::whereId($id)->orWhere('id_name','=',$id)->first();
 
         $meet->delete();
 

@@ -1,8 +1,8 @@
 @extends('layouts.spring')
 @section('content')
-<section class="hero-wrap hero-wrap-3" style="background-image: url('/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-3 pt-5" style="background-image: url('/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
-    <div class="container">
+    <div class="container pt-5">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate pb-5 text-center">
                 <h1 class="mb-2 bread">ایجاد جلسه جدید</h1>
@@ -29,7 +29,7 @@
                         <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-                </div><br />
+                </div>
                 @endif
                 {{ Form::open(['route' => 'meets.store']) }}
                     <div class="form-group">
@@ -47,10 +47,10 @@
                     </div>
                     <div class="form-group">
                         {{ Form::label('start_at', 'تاریخ تاسیس:') }}
-                        {{ Form::date('start_at',null, array('class' => 'form-control')) }}
+                        {{ Form::text('start_at',null, array('class' => 'form-control')) }}
                     </div>
                     <div class="form-group text-left">
-                        {{ Form::submit('ایجاد',['class' => 'btn btn-primary ']) }}
+                        {{ Form::submit('ایجاد',['class' => 'btn btn-primary py-3 px-5']) }}
                     </div>
                 {{ Form::close() }}
 
@@ -58,4 +58,9 @@
         </div>
     </div>
 </section>
+@endsection
+@section('script')
+$(function() {
+    $("#start_at").persianDatepicker();
+});
 @endsection

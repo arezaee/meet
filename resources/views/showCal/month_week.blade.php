@@ -10,7 +10,7 @@
             ))
     @endfor
     </div>
-    <div class="card-footer schedule">
+    <div class="card-footer schedule p-1">
         @if($dn == 7 && $day-1<=$month->month_day)
             @include("showCal.week_schedule")
         @endif

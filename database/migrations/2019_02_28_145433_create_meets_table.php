@@ -20,6 +20,7 @@ class CreateMeetsTable extends Migration
             $table->unique('id_name');
             $table->string('password');
             $table->date('start_at');
+            $table->string('pic');
             $table->timestamps();
         });
     }
