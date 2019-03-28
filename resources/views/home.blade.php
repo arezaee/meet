@@ -7,6 +7,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-10 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                 <h1 class="mb-0">تقویم جلسه مذهبی</h1>
+                <h3 class="subheading mb-4 pb-1">بررسی کوازار</h3>
                 <h3 class="subheading mb-4 pb-1">مشخصات اعضا و زمانبندی برگزاری جلسه هفتگی خود را ثبت و تقویم سالانه بسازید</h3>
                 <p>
                     <a href="{{ route('index') }}#help" class="btn btn-primary py-3 px-4">اینجا چه خبره؟</a>
