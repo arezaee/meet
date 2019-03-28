@@ -31,5 +31,5 @@ Route::resource('show/{id}/people', 'PersonController');
 Route::resource('show/{id}/{year}/schedules', 'ScheduleController');
 Route::resource('meets', 'MeetController')->except(['show']);
 
-Route::resource('occasions', 'OccasionsController');
-Route::resource('months', 'MonthController');
+//Route::resource('occasions', 'OccasionsController');
+//Route::resource('months', 'MonthController');

@@ -1,5 +1,5 @@
 <div class="row no-gutter row-year-title">
-    <div class="col-lg-1">
+    <div class="col-lg-1 d-none d-lg-block">
         <div class="card year-title">
             <h5 class="card-title">
                 {{App\Http\Controllers\Tools\Persian::convertToPersianNumber($year)}}

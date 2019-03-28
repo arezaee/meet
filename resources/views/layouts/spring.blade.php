@@ -94,6 +94,13 @@
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4 ml-md-5">
+                    <h2 class="ftco-heading-2">دسترسی سریع</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('index').'#help' }}" class="py-1 d-block"><span class="ion-ios-arrow-back ml-3"></span>راهنمای ایجاد جلسه</a></li>
+                        <li><a href="{{ route('meets.create') }}" class="py-1 d-block"><span class="ion-ios-arrow-back ml-3"></span>ایجاد جلسه جدید</a></li>
+                        <li><a href="{{ route('meets.index') }}" class="py-1 d-block"><span class="ion-ios-arrow-back ml-3"></span>جلسه های شما</a></li>
+                        <li><a href="{{ route('index').'#top' }}" class="py-1 d-block"><span class="ion-ios-arrow-back ml-3"></span>صفحه اصلی</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="col-md">
@@ -145,6 +152,11 @@
 <script src="{{ asset('js/my.js') }}"></script>
 
 <script>
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
     @yield('script')
 </script>
 </body>

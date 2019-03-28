@@ -49,6 +49,7 @@ body
     font-family:Normal !important;
     direction:rtl !important;
     text-align:right !important;
+    color: #212529 !important;
 }
 
 .row-striped{

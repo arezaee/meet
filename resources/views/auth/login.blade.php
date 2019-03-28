@@ -60,10 +60,10 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="custom-control custom-checkbox form-check text-md-left">
+                                    <input class="custom-control-input form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                     <label class="custom-control-label form-check-label" for="remember">
                                         {{ __('auth.Remember Me') }}
                                     </label>
-                                    <input class="custom-control-input form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 </div>
                             </div>
                         </div>

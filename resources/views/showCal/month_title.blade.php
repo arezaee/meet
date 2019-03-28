@@ -13,3 +13,11 @@
     </div>
     </div>
 </div>
+<div class="row d-lg-none">
+    @for($no=1; $no<=7; $no++  )
+        @include('showCal.day_of_week', array(
+                                            'no' => $no ,
+                                            'day_of_week' => config('constants.days_of_week_letter')[$no]
+                                        ))
+    @endfor
+</div>

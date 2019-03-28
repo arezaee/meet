@@ -9,6 +9,9 @@
                 'dw'=>$i
             ))
     @endfor
+    @for( ; $i<=7;$i++)
+        <div class="col d-lg-none"></div>
+    @endfor
     </div>
     <div class="card-footer schedule p-1">
         @if($dn == 7 && $day-1<=$month->month_day)
